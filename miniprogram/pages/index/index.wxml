@@ -1,23 +1,25 @@
 <!--index.wxml-->
 <view class="container">
-   <view class="userinfo">
-      <block wx:if="{{canIUseOpenData}}">
-         <view class="userinfo-avatar" bindtap="bindViewTap">
-            <open-data type="userAvatarUrl"></open-data>
+   <view class="statusBar" style="height: {{statusBarHeight}}px"></view>
+   <view class="appBar">
+      <view class="wrapper">
+         <view class="leading">
+            <image class="image" mode="aspectFit" src="/static/logo.png" />
          </view>
-         <open-data type="userNickName"></open-data>
-      </block>
-      <block wx:elif="{{!hasUserInfo}}">
-         <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-         <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-         <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-      </block>
-      <block wx:else>
-         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
+         <view class="title">
+            <text>Elephish</text>
+         </view>
+      </view>
    </view>
-   <view class="usermotto">
-      <text class="user-motto">{{motto}}</text>
+   <view class="content-box">
+      <scroll-view enhanced scroll-y show-scrollbar="{{false}}" class="scroll-view-box">
+         <view class="scroll-view-item item-1"></view>
+         <view class="scroll-view-item item-2"></view>
+         <view class="scroll-view-item item-3"></view>
+         <view class="scroll-view-item item-4"></view>
+         <view class="scroll-view-item item-5"></view>
+         <view class="scroll-view-item item-6"></view>
+         <view style="height: 14px;"></view>
+      </scroll-view>
    </view>
 </view>
